@@ -1,0 +1,14 @@
+1st character is for the BACKGROUND:
+	
+	T - Transparent 
+
+2nd character is for the COLOR OF THE LOGO:
+
+	B - Black
+	W - White
+
+3rd character is for the COLOR OF THE SLOGAN:
+
+	G - Gray
+	B - Black
+	W - White

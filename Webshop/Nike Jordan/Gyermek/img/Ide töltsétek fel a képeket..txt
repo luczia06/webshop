@@ -1,0 +1,1 @@
+Csinájatok minden cipőnek egy mappát és azokat a mappákat ide töltsétek fel.

@@ -1,0 +1,45 @@
+/*Nav kezdete*/
+
+nav {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: Copperplate;
+}
+
+nav img {
+    position: absolute;
+}
+
+nav #user_nav p, nav #main_nav h1 {
+    display: inline-block;
+}
+
+nav #user_nav a, nav #user_nav a:link, nav #user_nav a:visited, nav #user_nav a:active, nav #main_nav a, nav #main_nav a:link, nav #main_nav a:visited, nav #main_nav a:active {
+    text-decoration: none;
+    color: black;
+}
+
+nav #user_nav a:hover, nav #main_nav a:hover {
+    transition: 0.3s;
+    color: rgba(0, 0, 0, 0.66);
+}
+
+nav img#nav_logo {
+    width: 14%;
+    padding-top: 3.5%;
+
+}
+
+nav #user_nav {
+    font-size: 1.35vw;
+    padding-top: 3%;
+    padding-left: 71%;
+}
+
+nav #main_nav {
+    text-align: center;
+    font-size: 2vw;
+    word-spacing: 50px;
+}
+
+/*Nav vége*/

@@ -1,4 +1,38 @@
 footer {
+    margin-top: 5%;
+    margin-bottom: -100%;
     color: white;
     background-color: black;
+    text-align: center;
+}
+
+footer #logo_up {
+    padding: 2%;
+}
+
+footer #logo_up #logo_sign {
+    font-family: Copperplate;
+    font-size: 2vw;
+}
+
+footer #logo_up #logo_slogan {
+    font-family: Copperplate;
+    font-size: 1vw;
+}
+
+footer #law_down{
+    padding-bottom: 3%;
+}
+
+footer #law_down #law {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+}
+
+footer #law_down a, footer #law_down a:link, footer #law_down a:visited, footer #law_down a:active {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    margin: 1%;
 }

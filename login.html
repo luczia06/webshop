@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/links.css">
-    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/links.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="style.css">
     <title>Shoes ON</title>
 </head>
@@ -19,7 +20,7 @@
             <a href=""><i class="bi bi-person-fill"></i>&nbsp;&nbsp;<p>Fiók</p></a>
         </div>
         <div id="main_nav">
-            <a href=""><h1>Főoldal</h1></a>
+            <a href="index.html"><h1>Főoldal</h1></a>
             <a href=""><h1>Rólunk</h1></a>
             <a href=""><h1>Webshop</h1></a>
             
@@ -28,13 +29,16 @@
 
     <div id="login_reg">
         <hr class="top_hr">
-        <h1 class="login_reg_sign">BEJELNTKEZÉS</h1>
-        <div id="inputs">
-            <input type="text" id="email" name="email" placeholder="E-mail" required>
-            <input type="password" id="password" name="password" placeholder="Jelszó" required>
-        </div>
-        <a href="#"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a>
-        <button>BEJELNTKEZÉS</button>
+        <h1 class="login_reg_sign">BEJELENTKEZÉS</h1>
+        <form>
+            <div id="inputs">
+                <input type="text" id="email" name="email" placeholder="E-mail" required>
+                <input type="password" id="password" name="password" placeholder="Jelszó" required>
+            </div>
+            <a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a>
+            <button onclick="Login()" >BEJELENTKEZÉS</button>
+            <div id="login_error">p</div>
+        </form>
         <hr class="down_hr">
     </div>
 
@@ -50,5 +54,6 @@
             <a href=""><p id="law">Cookie (süti) tájékoztató</p></a>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

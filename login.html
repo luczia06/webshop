@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/links.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Shoes ON</title>
+    <script src="script.js"></script>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+}
+
+#login_reg {
+    font-family: Copperplate;
+    text-align: center;
+}
+
+#login_reg .top_hr {
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+#login_reg hr {
+    width: 60%;
+    border: solid .5px #828282;
+}
+
+#login_reg .login_reg_sign {
+    font-size: 2.5vw;
+}
+
+#login_reg #name {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+#login_reg #name input {
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    width: 15%;
+    padding: 1.5vw;
+    border: none;
+    border: solid 1px #E0E0E0;
+    border-radius: 5px;
+}
+
+#login_reg #inputs input {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+    width: 30%;
+    display: block;
+    box-sizing: border-box;
+    padding: 1.5vw;
+    border: none;
+    border: solid 1px #E0E0E0;
+    border-radius: 5px;
+}
+
+::-webkit-input-placeholder {
+    font-size: 1vw;
+}
+::-moz-placeholder {
+    font-size: 1vw;
+}
+:-ms-input-placeholder {
+    font-size: 1vw;
+}
+:-moz-placeholder {
+    font-size: 1vw;
+}
+
+#login_reg .reg {
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7B7B7B;
+    text-decoration: underline;
+    padding-top: 1%;
+}
+
+button {
+    margin-top: 3%;
+    padding: 1% 1.5%;
+    color: white;
+    background-color: black;
+    font-family: Copperplate;
+    font-size: 1.5vw;
+    border: none;
+    text-decoration: none;
+    border-radius: 100px;
+    transition-duration: 0.4s;
+    border: solid 2px black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+}
+
+.down_hr {
+    margin-top: 3%;
+}
+
+#login_error {
+    color: red;
+}
+</style>
+<body>
+    <nav id="navbar">
+        <a href=""><img id="nav_logo" src="/logo/Tittle & Slogan/TBB/shoes_on-logo(2TBB).svg" alt=""></a>
+        <div id="user_nav">
+            <a href=""><i class="bi bi-bag-fill"></i>&nbsp;&nbsp;<p>Kosár</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="bi bi-heart-fill"></i>&nbsp;&nbsp;<p>Kedvencek</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><i class="bi bi-person-fill"></i>&nbsp;&nbsp;<p>Fiók</p></a>
+        </div>
+        <div id="main_nav">
+            <a href="index.html"><h1>Főoldal</h1></a>
+            <a href=""><h1>Rólunk</h1></a>
+            <a href=""><h1>Webshop</h1></a>
+            
+        </div>
+    </nav>
+
+    <div id="login_reg">
+        <hr class="top_hr">
+        <h1 class="login_reg_sign">BEJELENTKEZÉS</h1>
+        <form>
+            <div id="inputs">
+                <input type="text" id="email" name="email" placeholder="E-mail" required>
+                <input type="password" id="password" name="password" placeholder="Jelszó" required>
+            </div>
+            <a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a>
+            <button onclick="Login()" >BEJELENTKEZÉS</button>
+            <div id="login_error">p</div>
+        </form>
+        <hr class="down_hr">
+    </div>
+
+    <footer>
+        <div id="logo_up">
+            <h1 id="logo_sign">SHOES ON</h1>
+            <p id="logo_slogan">THE ONLINE SHOES STORE.</p>
+        </div>
+        <div id="law_down">
+            <a href=""><p id="law">Adatvédelmi nyilatkozat</p></a>
+            <a href=""><p id="law">ÁSZF</p></a>
+            <a href=""><p id="law">Impresszum</p></a>
+            <a href=""><p id="law">Cookie (süti) tájékoztató</p></a>
+        </div>
+    </footer>
+</body>
+</html>

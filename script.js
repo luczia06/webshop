@@ -1,7 +1,9 @@
 var cookies = {
-    login = {},
-    favorites = {},
-    cart = {}
+    login: {
+        logged_in: 'false',
+    },
+    favorites: {},
+    cart: {}
 }
 
 //JSON.stringify(value) -- encode
@@ -21,31 +23,89 @@ function GetCookie(name) { //Returns an object
 
 //Disclaimer: Everything needs testing
 
-function Register(name, password) {
-    login_obj = GetCookie('login')
-    console.log(login_obj)
-    if (login_obj) {
-        if (name == login_obj.name && password == login_obj.password) {
-            console.log('Már van ilyen!')
+function Register() {
+    var lastname = ';';
+    var firstname = '';
+    var email = '';
+    var password = '';
+
+    if (document.getElementById('lastname' != null).value) {
+        lastname = document.getElementById('lastname').value;
+
+        if (document.getElementById('firstname' != null).value) {
+            firstname = document.getElementById('firstname').value;
+
+            if (document.getElementById('email' != null).value) {
+                email = document.getElementById('email').value;
+
+                if (document.getElementById('password' != null).value) {
+                    password = document.getElementById('password').value;
+
+                } else {
+                    console.log('Jelszó!');
+                    document.getElementById('login_error').innerHTML = 'Jelszó!';
+                }
+            } else {
+                console.log('Email!');
+                document.getElementById('login_error').innerHTML = 'Email!';
+            }
+        } else {
+            console.log('Írj keresztnevet!');
+            document.getElementById('login_error').innerHTML = 'Írj keresztnevet!';
         }
     } else {
-        SetCookie('login', {name, password})
-        console.log('Cookie set. name: '+ name + ' password: ' + password)
+        console.log('Írj vezetéknevet!');
+        document.getElementById('login_error').innerHTML = 'Írj vezetéknevet!';
+    }
+
+    login_obj = GetCookie('login');
+    console.log(login_obj);
+    if (login_obj) {
+        if (email == login_obj.email) {
+            console.log('Már van fiók ilyen emaillel!');
+            document.getElementById('login_error').innerHTML = 'Már van fiók ilyen emaillel!';
+        } else {
+            SetCookie('login', {firstname : firstname, lastname:  lastname, email: email, password: password});
+            console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
+        }
+    } else {
+        SetCookie('login', {firstname : firstname, lastname:  lastname, email: email, password: password});
+        console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
     }
 }
 
-function Login(name, password) {
-    login_obj = GetCookie('login')
-    if (login_obj) {
-        if (name == login_obj.name && password == login_obj.password) {
-            console.log('login')
-            //login here
+function Login() {
+    var email = '';
+    var password = '';
+    if (document.getElementById('email').value != null) {
+        email = document.getElementById('email').value;
+
+        if (document.getElementById('password' != null).value) {
+            password = document.getElementById('password').value;
+
         } else {
-            console.log('Valami nem jó')
+            console.log('Jelszó!');
+            document.getElementById('login_error').innerHTML = 'Jelszó!';
+        }
+    } else {
+        console.log('Email!');
+        document.getElementById('login_error').innerHTML = 'Email!';
+    }
+
+    login_obj = GetCookie('login');
+    if (login_obj) {
+        if (email == login_obj.email && password == login_obj.password) {
+            console.log('login');
+            //login here
+            document.getElementById('login_error').innerHTML = 'logged in -- under construction';
+        } else {
+            console.log('Valami nem jó');
+            document.getElementById('login_error').innerHTML = 'Valami nem jó';
             //change error <p>
         }
     } else {
-        console.log('Nincs fiókod!')
+        console.log('Nincs fiókod!');
+        document.getElementById('login_error').innerHTML = 'Nincs fiókod, regisztrálj!';
     }
 }
 

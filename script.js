@@ -30,14 +30,13 @@ function GetCookie(name) { //Returns an object
     return object;
 }
 
-function isValidPassword(password) {
-    if (
-        typeof password !== "string" ||
-        password.length !== 8 ||
-        /[^A-Za-z0-9]+/g.test(password)
-    ) 
+function isValidPassword(password) { 
+    var expr = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    if(password.match(expr)) { 
+        return true;
+    } else { 
         return false;
-    return true;
+    }
 }
 
 //Disclaimer: Everything needs testing
@@ -91,7 +90,7 @@ function Register() {
                     console.log('13')
                     if (password) {
                         console.log('14')
-                        var isValid = isValidPassword(toString(password))
+                        var isValid = isValidPassword(password)
                         if (isValid) {
                             console.log('15')
                             SetCookie('login', {firstname, lastname, email, password});

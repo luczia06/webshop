@@ -53,11 +53,12 @@ function Register() {
     console.log(login_obj);
     if (login_obj) {
         console.log('2')
-        if (email == login_obj['email']) {
+        console.log(email)
+        console.log(login_obj['email'])
+        if (email === login_obj['email']) {
             console.log('3')
-            console.log('Már van fiók ilyen emaillel!');
-            document.getElementById('login_error').innerHTML = 'Már van fiók ilyen emaillel!';
-        } else {
+            document.getElementById('login_error').innerHTML = 'Már van fiókod!';
+        }/* else {
             console.log('4')
             if (lastname) {
                 console.log('5')
@@ -67,7 +68,8 @@ function Register() {
                         console.log('7')
                         if (password) {
                             console.log('8')
-                            if (isValidPassword(password)) {
+                            var isValid = toString(isValidPassword(password))
+                            if (isValid) {
                                 console.log('9')
                                 SetCookie('login', {firstname, lastname, email, password});
                                 console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
@@ -78,7 +80,7 @@ function Register() {
                     }
                 }
             }
-        }
+        }*/
     } else {
         console.log('10')
         if (lastname) {
@@ -89,7 +91,8 @@ function Register() {
                     console.log('13')
                     if (password) {
                         console.log('14')
-                        if (isValidPassword(password)) {
+                        var isValid = isValidPassword(toString(password))
+                        if (isValid) {
                             console.log('15')
                             SetCookie('login', {firstname, lastname, email, password});
                             console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);

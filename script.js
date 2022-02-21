@@ -140,3 +140,35 @@ function ShowPassword() {
 window.onload = function() {
     console.log('hey')
 };
+
+//Navbar kezdete
+
+//Navbar scrolling kezdte
+
+myID = document.getElementById("navbar");
+var myScrollFunc = function() {
+var y = window.scrollY;
+    if (y >= 50) {
+        myID.className = "navbar scroll"
+    } else {
+        myID.className = "navbar"
+    } 
+};
+window.addEventListener("scroll", myScrollFunc);
+
+//Navbar scrolling vége
+
+//Navbar hamburger ikon-ra való nyomáskor megjelenő menü kezdte
+
+function myFunction() {
+  var x = document.getElementById("nav_id");
+  if (x.className === "navbar") {
+    x.className += " mobile";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+//Navbar hamburger ikon-ra való nyomáskor megjelenő menü vége
+
+//Navbar vége

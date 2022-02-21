@@ -1,9 +1,19 @@
+/*Nagy képernyős footer kezdete*/
+
 footer {
-    margin-top: 5%;
-    margin-bottom: -100%;
+    margin-top: auto;
     color: white;
     background-color: black;
     text-align: center;
+    padding-top: 3%;
+}
+
+@media only screen and (min-width:700px) {
+
+    footer #law_down #law {
+        display: inline-block;
+    }
+
 }
 
 footer #logo_up {
@@ -16,7 +26,7 @@ footer #logo_up #logo_sign {
 }
 
 footer #logo_up #logo_slogan {
-    font-family: Copperplate;
+    font-family: Copperlate_Light;
     font-size: 1vw;
 }
 
@@ -25,7 +35,6 @@ footer #law_down{
 }
 
 footer #law_down #law {
-    display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5vw;
 }
@@ -36,3 +45,30 @@ footer #law_down a, footer #law_down a:link, footer #law_down a:visited, footer 
     color: white;
     margin: 1%;
 }
+
+/*Nagy képernyős footer vége*/
+
+/*Kis képernyős footer kezdete*/
+
+@media only screen and (max-width:700px) {
+
+    footer #logo_up {
+        padding: 3%;
+    }
+
+    footer #logo_up #logo_sign{
+        font-size: 4vw;
+    }
+
+    footer #logo_up #logo_slogan {
+        font-size: 2vw;
+    }
+
+    footer #law_down #law {
+        margin: .1%;
+        font-size: 2vw;
+    }
+
+}
+
+/*Kis képernyős footer vége*/

@@ -140,3 +140,59 @@ function ShowPassword() {
 window.onload = function() {
     console.log('hey')
 };
+
+//Navbar kezdete
+
+//Navbar scrolling kezdete
+
+myID = document.getElementById("navbar");
+var myScrollFunc = function() {
+var y = window.scrollY;
+    if (y >= 50) {
+        myID.className = "navbar scroll"
+    } else {
+        myID.className = "navbar"
+    } 
+};
+window.addEventListener("scroll", myScrollFunc);
+
+//Navbar scrolling vége
+
+//Navbar hamburger ikon-ra való nyomáskor megjelenő menü kezdete
+
+function myFunction() {
+  var x = document.getElementById("nav_id");
+  if (x.className === "navbar") {
+    x.className += " mobile";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+//Navbar hamburger ikon-ra való nyomáskor megjelenő menü vége
+
+//Navbar vége
+
+//Ugyan az csak a Bootstrap-es részre vonatkozóan kezdete
+
+myID = document.getElementById("navbar_off");
+var myScrollFunc = function() {
+var y = window.scrollY;
+    if (y >= 50) {
+        myID.className = "navbar_off scroll"
+    } else {
+        myID.className = "navbar_off"
+    } 
+};
+window.addEventListener("scroll", myScrollFunc);
+
+function myFunction() {
+  var x = document.getElementById("nav_id_off");
+  if (x.className === "navbar_off") {
+    x.className += " mobile";
+  } else {
+    x.className = "navbar_off";
+  }
+}
+
+//Ugyan az csak a Bootstrap-es részre vonatkozóan vége

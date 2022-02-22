@@ -2,42 +2,42 @@
 
 @font-face {
     font-family: Copperlate;
-    src: url(css\copperplate\Copperplate_Bold.ttf);
+    src: url(copperplate/Copperplate_Bold.ttf);
 }
 
 @font-face {
     font-family: Copperlate_Light;
-    src: url(css\copperplate\Copperplate_Gothic_Light.ttf);
+    src: url(copperplate/Copperplate_Gothic_Light.ttf);
 }
 
 @font-face {
     font-family: Futura_Bold;
-    src: url(css/futura/futur.ttf);
+    src: url(futura/futur.ttf);
 }
 
 @font-face {
     font-family: Futura_Medium;
-    src: url(css/futura/futura\ medium\ bt.ttf);
+    src: url(futura/futura\ medium\ bt.ttf);
 }
 
 @font-face {
     font-family: Futura_Medium_Italic;
-    src: url(css/futura/Futura\ Medium\ Italic\ font.ttf);
+    src: url(futura/Futura\ Medium\ Italic\ font.ttf);
 }
 
 @font-face {
     font-family: Futura_Condensed_Medium;
-    src: url(css/futura/futura\ medium\ condensed\ bt.ttf);
+    src: url(futura/futura\ medium\ condensed\ bt.ttf);
 }
 
 @font-face {
     font-family: Futura_Condensed_ExtraBold;
-    src: url(css/futura/unicode.futurabb.ttf);
+    src: url(futura/unicode.futurabb.ttf);
 }
 
 @font-face {
     font-family: Futura_Light;
-    src: url(css/futura/futura\ light\ bt.ttf);
+    src: url(futura/futura\ light\ bt.ttf);
 }
 
 body {

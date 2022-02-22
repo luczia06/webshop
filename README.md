@@ -24,5 +24,3 @@
 - [Somogyi Bánk](https://github.com/somogyib05)
 - [Kollár Botond](https://github.com/Boti150)
 - [Simon Gábor](https://github.com/Gabero6)
-
-[Teszt](README.md#projektben-résztvevők)

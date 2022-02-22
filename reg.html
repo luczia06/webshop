@@ -9,22 +9,27 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="style.css">
-    <title>Shoes ON</title>
+    <title>Shoes ON - Regisztráció</title>
     
 </head>
 <body>
-    <nav id="navbar">
-        <a href=""><img id="nav_logo" src="logo/Tittle & Slogan/TBB/shoes_on-logo(2TBB).svg" alt=""></a>
-        <div id="user_nav">
-            <a href=""><i class="bi bi-bag-fill"></i>&nbsp;&nbsp;<p>Kosár</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href=""><i class="bi bi-heart-fill"></i>&nbsp;&nbsp;<p>Kedvencek</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href=""><i class="bi bi-person-fill"></i>&nbsp;&nbsp;<p>Fiók</p></a>
-        </div>
-        <div id="main_nav">
-            <a href="index.html"><h1>Főoldal</h1></a>
-            <a href=""><h1>Rólunk</h1></a>
-            <a href=""><h1>Webshop</h1></a>
-            
+    <div class="corrector"></div>
+    <nav class="navbar" id="navbar">
+        <div class="navbar" id="nav_id">
+            <a href="index.html"><img id="nav_logo" src="/logo/Tittle & Slogan/TBB/shoes_on-logo(2TBB).svg" alt=""></a>
+            <div id="hamburger_icon">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="bi bi-list"></i></a>
+            </div>
+            <div id="user_nav">
+                <a href=""><i class="bi bi-bag-fill"></i>&nbsp;&nbsp;<p>Kosár</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="fav.html"><i class="bi bi-heart-fill"></i>&nbsp;&nbsp;<p>Kedvencek</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="login.html"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;<p>Fiók</p></a>
+            </div>
+            <div id="main_nav">
+                <a href="index.html"><h1>Főoldal</h1></a>
+                <a href=""><h1>Rólunk</h1></a>
+                <a href=""><h1>Webshop</h1></a>
+            </div>
         </div>
     </nav>
 
@@ -39,10 +44,12 @@
             </div>
             <div id="inputs">
                 <input type="text" id="email" name="email" placeholder="E-mail" required>
-                <input type="password" id="password" name="password" placeholder="Jelszó" required>
-                <input type="checkbox" onclick="ShowPassword()">Jelszó mutatása
+                <div id="password">
+                    <input type="password" id="password" name="password" placeholder="Jelszó" required>
+                    <span><a href=""><i class="bi bi-eye"></i></a></span>
+                </div>
             </div>
-            <a href="login.html"><p class="reg">Bejelentkezés</p></a>
+            <a href="login.html"><p class="reg">Már regisztráltál fiókot? Jelentkezz be!</p></a>
             <button onclick="Register()">REGISZTRÁLÁS</button>
             <div id="login_error"></div>
         </form>

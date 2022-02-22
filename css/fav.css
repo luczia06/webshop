@@ -1,0 +1,85 @@
+#fav #title {
+    color: white;
+    background-color: black;
+    font-family: Copperlate;
+    text-align: center;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: auto;
+    margin-bottom: 5%;
+}
+
+#fav #title h1 {
+    font-size: 1.8vw;
+    padding: 8%;
+}
+
+#fav #cards {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#fav #cards #first_card {
+    padding-bottom: 2%;
+}
+
+#fav #cards #first_card #images {
+    padding: 2%;
+    height: 11vw;
+    width: 11vw;
+}
+
+#fav #cards #first_card #images img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#fav #cards #first_card #content {
+    display: flex;
+}
+
+#fav #cards #first_card #info #title_price {
+    display: flex;
+    width: 200%;
+}
+
+#fav #cards #first_card #info #title_price #price {
+    position: absolute;
+    margin-top: .2%;
+    margin-left: 38%;
+}
+
+#fav #cards #first_card #info #left_side {
+    margin-top: -5%;
+}
+
+#fav #cards #first_card #info #left_side a .delete {
+    margin-top: 17%;
+}
+
+/*Betűk beállításának kezdete*/
+
+#fav #cards #first_card #info #title_price {
+    font-family: Copperlate;
+}
+
+#fav #cards #first_card #info #title_price h1 {
+    font-family: Copperlate;
+    font-size: 1.5vw;
+}
+
+#fav #cards #first_card #info p {
+    font-size: 1vw;
+}
+
+#fav #cards #first_card #info #left_side p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #848484;
+}
+
+#fav #cards #first_card #info #left_side a .delete {
+    font-family: Copperlate_Light;
+}
+
+/*Betűk beállításának vége*/

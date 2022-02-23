@@ -12,6 +12,11 @@ nav img {
     position: absolute;
 }
 
+nav img#nav_logo {
+    width: 14%;
+    
+}
+
 @media only screen and (min-width:700px) {
 
     nav #user_nav p, nav #main_nav h1 {
@@ -29,11 +34,6 @@ nav #user_nav a, nav #user_nav a:link, nav #user_nav a:visited, nav #user_nav a:
 nav #user_nav a:hover, nav #main_nav a:hover {
     transition: 0.3s;
     color: rgba(0, 0, 0, 0.66);
-}
-
-nav img#nav_logo {
-    width: 14%;
-    padding-top: 3.5%;
 }
 
 nav #user_nav {

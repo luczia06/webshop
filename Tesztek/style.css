@@ -1,5 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
-
 body {
     color: black;
 }
@@ -19,7 +17,7 @@ body {
 }
 
 #top_things #search_categories{
-    display: flex;
+    width: 20%;
 }
 
 #top_things #search_categories input::-webkit-input-placeholder {
@@ -36,17 +34,6 @@ body {
   
 #top_things #search_categories input::-moz-placeholder {
     font-family: Futura_Condensed_Medium;
-}
-
-#top_things #search_categories #categories #categories_text h2 {
-    position: absolute;
-    margin-top: -2.5%;
-    font-size: 1.3vw;
-    font-family: Futura_Condensed_Medium;
-}
-
-#top_things #search_categories #categories #selecting .form-select {
-    width: 100%;
 }
 
 .card {
@@ -102,65 +89,3 @@ body {
     height: 200px; 
     object-fit: cover;
 }
-
-/*.card {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    text-align: center;
-    width: 20vw;
-    height: 27.5vw;
-}
-
-.card .card-body {
-    max-height: 200px;
-}
-
-.card .card-body .card-title {
-    font-size: 1.2vw;
-}
-
-.card .card-body .card-title .air {
-    font-family: Futura_Medium;
-}
-
-.card .card-body .card-title {
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    font-family: Futura_Condensed_ExtraBold;
-    margin-top: 3%;
-}
-
-.card a h5 {
-    font-family: Futura_Light;
-    font-size: 1.4vw;
-    padding-top: 1.5vw;
-    float: right;
-}
-
-.card a i {
-    font-size: 1.6vw;
-    padding-top: 1.5vw;
-    float: left;
-}
-
-.card a {
-    color: black;
-}
-
-.card .card-text {
-    font-family: Futura_Condensed_Medium;
-    font-size: 1.2vw;
-    letter-spacing: .1vw;
-    margin-top: 3.7vw;
-    margin-left: 5.5vw;
-    margin-right: 5.5vw;*
-    padding: .5vw;
-    color: white;
-    background-color: black;
-}
-
-.card img {
-    height: 14vw; 
-    object-fit: cover;
-}*/

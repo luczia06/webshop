@@ -4,17 +4,13 @@ nav {
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 2%;
+    padding-top: 1%;
     background-color: white;
     font-family: Copperplate;
 }
 
 nav img {
     position: absolute;
-}
-
-nav img#nav_logo {
-    width: 14%;
-    
 }
 
 @media only screen and (min-width:700px) {
@@ -36,6 +32,11 @@ nav #user_nav a:hover, nav #main_nav a:hover {
     color: rgba(0, 0, 0, 0.66);
 }
 
+nav img#nav_logo {
+    width: 14%;
+    padding-top: 3%;
+}
+
 nav #user_nav {
     font-family: Copperlate_Light;
     font-size: 1.35vw;
@@ -47,6 +48,7 @@ nav #main_nav {
     text-align: center;
     font-size: 2vw;
     word-spacing: 50px;
+    padding-top: 1%;
 }
 
 /*Nagy képernyős nav vége*/
@@ -69,6 +71,14 @@ nav #hamburger_icon {
         padding-bottom: 3%;
     }
 
+    nav img {
+        position: relative;
+    }
+
+    .navbar.mobile {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+
     nav.scroll {
         box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
     }
@@ -87,7 +97,7 @@ nav #hamburger_icon {
 
     .navbar #hamburger_icon {
         display: block;
-        padding-top: 3.5%;
+        margin-top: -8%;
         font-size: 6vw;
         text-align: right;
     }

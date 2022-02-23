@@ -30,9 +30,27 @@ function GetCookie(name) { //Returns an object
     return object;
 }
 
+function isValidName(name) {
+    var expr = /[0-9]+/g;
+    if(name.match(expr)) { 
+        return true;
+    } else { 
+        return false;
+    }
+}
+
 function isValidPassword(password) { 
     var expr = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
     if(password.match(expr)) { 
+        return true;
+    } else { 
+        return false;
+    }
+}
+
+function isValidEmail(email) {
+    var expr = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(email.match(expr)) { 
         return true;
     } else { 
         return false;
@@ -43,63 +61,36 @@ function isValidPassword(password) {
 
 function Register() {
     event.preventDefault();
+
     var lastname = document.forms["reg"]["lastname"].value;
     var firstname = document.forms["reg"]["firstname"].value;
     var email = document.forms["reg"]["email"].value;
     var password = document.forms["reg"]["password"].value;
-    console.log('1')
+
     login_obj = GetCookie('login');
-    console.log(login_obj);
+
     if (login_obj) {
-        console.log('2')
-        console.log(email)
-        console.log(login_obj['email'])
         if (email === login_obj['email']) {
-            console.log('3')
             document.getElementById('login_error').innerHTML = 'Már van fiókod!';
-        }/* else {
-            console.log('4')
-            if (lastname) {
-                console.log('5')
-                if (firstname) {
-                    console.log('6')
-                    if (email) {
-                        console.log('7')
-                        if (password) {
-                            console.log('8')
-                            var isValid = toString(isValidPassword(password))
-                            if (isValid) {
-                                console.log('9')
-                                SetCookie('login', {firstname, lastname, email, password});
-                                console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
-                            } else {
-                                document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
+        }
     } else {
-        console.log('10')
-        if (lastname) {
-            console.log('11')
-            if (firstname) {
-                console.log('12')
-                if (email) {
-                    console.log('13')
-                    if (password) {
-                        console.log('14')
-                        var isValid = isValidPassword(password)
-                        if (isValid) {
-                            console.log('15')
-                            SetCookie('login', {firstname, lastname, email, password});
-                            console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
-                        } else {
-                            document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
-                        }    
+        if (lastname && firstname && email && password) {
+            if (isValidName(firstname) && isValidName(lastname)) {
+                if (isValidEmail(email)) {
+                    if (isValidPassword(password)) {
+                        SetCookie('login', {firstname, lastname, email, password});
+                        console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
+                    } else {
+                        console.log('1')
+                        document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
                     }
+                } else {
+                    console.log('2')
+                    document.getElementById('login_error').innerHTML = 'Nem megfelelő email!';
                 }
+            } else {
+                console.log('3')
+                document.getElementById('login_error').innerHTML = 'Nem megfelelő név!';
             }
         }
     }
@@ -107,21 +98,18 @@ function Register() {
 
 function Login() {
     event.preventDefault();
+
     var email = document.forms["login"]["email"].value;
     var password = document.forms["login"]["password"].value;
 
     login_obj = GetCookie('login');
-    if (login_obj) {
-        if (email) {
-            if (password) {
-                if (email == login_obj.email && password == login_obj.password) {
-                    //login here
-                    document.getElementById('login_error').innerHTML = 'logged in -- under construction';
-                } else {
-                    document.getElementById('login_error').innerHTML = 'Valami nem jó';
-                    //change error <p>
-                }
-            }
+
+    if (login_obj && email && password) {
+        if (email === login_obj.email && password === login_obj.password) {
+            //login here
+            document.getElementById('login_error').innerHTML = 'logged in -- under construction';
+        } else {
+            document.getElementById('login_error').innerHTML = 'Valami nem jó';
         }
     } else {
         document.getElementById('login_error').innerHTML = 'Nincs fiókod, regisztrálj!';
@@ -130,6 +118,7 @@ function Login() {
 
 function ShowPassword() {
     pass_element = document.getElementById('password');
+
     if (pass_element.type === "password") {
         pass_element.type = "text";
     } else {
@@ -186,6 +175,7 @@ var y = window.scrollY;
 };
 window.addEventListener("scroll", myScrollFunc);
 
+/*
 function myFunction() {
   var x = document.getElementById("nav_id_off");
   if (x.className === "navbar_off") {
@@ -194,5 +184,6 @@ function myFunction() {
     x.className = "navbar_off";
   }
 }
+*/
 
 //Ugyan az csak a Bootstrap-es részre vonatkozóan vége

@@ -1,30 +1,24 @@
-var cookies = {
-    login: {
-        logged_in: 'false',
-    },
-    favorites: {},
-    cart: {}
-}
-
 //JSON.stringify(value) -- encode
 //JSON.parse(result[1])) -- decode
 
 function SetCookie(name, obj) {
-    /*
+    /* Cookie Version
     var encoded_obj = JSON.stringify(obj)
     var cookie = [name, '=', encoded_obj, '; domain=.', window.location.host.toString(), '; path=/;'].join('');
     document.cookie = cookie;
     */
+   /* Local Storage Version */
     var encoded_obj = JSON.stringify(obj);
     localStorage.setItem(name, encoded_obj);
 }
 
 function GetCookie(name) { //Returns an object
-    /*
+    /* Cookie Version
     var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
     result && (result = JSON.parse(result[1]));
     return result;
     */
+    /* Local Storage Version */
     var string = localStorage.getItem(name);
     var object = JSON.parse(string);
     return object;
@@ -124,6 +118,10 @@ function ShowPassword() {
     } else {
         pass_element.type = "password";
     }
+}
+
+function Favorite(element) {
+    element.style = 'color: red';
 }
 
 window.onload = function() {

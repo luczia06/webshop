@@ -33,7 +33,9 @@ nav #user_nav a:hover, nav #main_nav a:hover {
 
 nav img#nav_logo {
     width: 14%;
-    padding-top: 3.5%;
+    left: 0%;
+    top: 0%;
+    transform: translate(-0%, -0%);
 }
 
 nav #user_nav {

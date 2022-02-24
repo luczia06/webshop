@@ -5,7 +5,6 @@ nav {
     padding-right: 5%;
     padding-bottom: 2%;
     background-color: white;
-    font-family: Copperplate;
 }
 
 nav img {
@@ -33,9 +32,7 @@ nav #user_nav a:hover, nav #main_nav a:hover {
 
 nav img#nav_logo {
     width: 14%;
-    left: 0%;
-    top: 0%;
-    transform: translate(-0%, -0%);
+    padding-top: 3%;
 }
 
 nav #user_nav {
@@ -46,6 +43,7 @@ nav #user_nav {
 }
 
 nav #main_nav {
+    font-family: Copperplate;
     text-align: center;
     font-size: 2vw;
     word-spacing: 50px;

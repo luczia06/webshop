@@ -54,6 +54,18 @@
     margin-top: -5%;
 }
 
+#fav #cards #first_card #info #title_price h1 {
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+#fav #cards #first_card #info #title_price h1 .nike {
+    font-family: Futura_Condensed_ExtraBold;
+} 
+
+#fav #cards #first_card #info #title_price h1 .air {
+    font-family: Futura_Condensed_Medium;
+} 
+
 #fav #cards #first_card #info #left_side a .delete {
     margin-top: 17%;
 }

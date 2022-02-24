@@ -1,0 +1,124 @@
+/*Nagy képernyős nav kezdete*/
+
+nav {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    background-color: white;
+    font-family: Copperplate;
+}
+
+nav img {
+    position: absolute;
+}
+
+@media only screen and (min-width:700px) {
+
+    nav #user_nav p, nav #main_nav h1 {
+        display: inline-block;
+    }
+
+}
+
+nav #user_nav a, nav #user_nav a:link, nav #user_nav a:visited, nav #user_nav a:active, nav #main_nav a, nav #main_nav a:link, nav #main_nav a:visited, nav #main_nav a:active {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+nav #user_nav a:hover, nav #main_nav a:hover {
+    transition: 0.3s;
+    color: rgba(0, 0, 0, 0.66);
+}
+
+nav img#nav_logo {
+    width: 14%;
+    padding-top: 3.5%;
+}
+
+nav #user_nav {
+    font-family: Copperlate_Light;
+    font-size: 1.35vw;
+    padding-top: 3%;
+    text-align: right;
+}
+
+nav #main_nav {
+    text-align: center;
+    font-size: 2vw;
+    word-spacing: 50px;
+}
+
+/*Nagy képernyős nav vége*/
+
+nav #hamburger_icon {
+    display: none;
+}
+
+/*Kis képernyős nav kezdete*/
+
+@media only screen and (max-width:700px) {
+
+    .corrector {
+        height: 10vh;
+    }
+
+    nav {
+        position: fixed;
+        width: 90%;
+        padding-bottom: 3%;
+    }
+
+    nav.scroll {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav #user_nav, nav #main_nav {
+        display: none;
+    }
+
+    .navbar.mobile #user_nav, .navbar.mobile #main_nav {
+        display: block;
+    }
+
+    .navbar.mobile #user_nav, .navbar.mobile #main_nav {
+        text-align: center;
+    }
+
+    .navbar #hamburger_icon {
+        display: block;
+        padding-top: 3.5%;
+        font-size: 6vw;
+        text-align: right;
+    }
+
+    nav #hamburger_icon a, nav #hamburger_icon a:link, nav #hamburger_icon a:visited, nav #hamburger_icon a:active {
+        color: black;
+    }
+
+    nav img#nav_logo {
+        width: 25%;
+        padding-top: 3.5%;
+    }
+
+    .navbar.mobile #user_nav p {
+        display: inline;
+    }
+
+    .navbar.mobile #user_nav {
+        padding-top: 7%;
+        font-size: 3vw;
+    }
+
+    .navbar.mobile #main_nav {
+        padding-top: 3%;
+    }
+
+    .navbar.mobile #main_nav h1 {
+        font-size: 5vw;
+        padding-bottom: 5%;
+    }
+    
+}
+
+/*Kis képernyős nav vége*/

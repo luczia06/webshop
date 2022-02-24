@@ -1,0 +1,134 @@
+/*Nagy képernyős nav kezdete*/
+
+nav {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    background-color: white;
+    font-family: Copperplate;
+}
+
+nav img {
+    position: absolute;
+}
+
+@media only screen and (min-width:700px) {
+
+    nav #user_nav_off p, nav #main_nav_off h1 {
+        display: inline-block;
+    }
+
+}
+
+nav #user_nav_off a, nav #user_nav_off a:link, nav #user_nav_off a:visited, nav #user_nav_off a:active, nav #main_nav_off a, nav #main_nav_off a:link, nav #main_nav_off a:visited, nav #main_nav_off a:active {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+nav #user_nav_off a:hover, nav #main_nav_off a:hover {
+    transition: 0.3s;
+    color: rgba(0, 0, 0, 0.66);
+}
+
+nav img#nav_logo_off {
+    width: 14%;
+    padding-top: 2%;
+}
+
+nav #user_nav_off {
+    font-family: Copperlate_Light;
+    font-size: 1.35vw;
+    padding-top: 3%;
+    text-align: right;
+}
+
+nav #main_nav_off {
+    text-align: center;
+    font-size: 2vw;
+    word-spacing: 50px;
+    padding-top: 1%;
+}
+
+/*Nagy képernyős nav vége*/
+
+nav #hamburger_icon {
+    display: none;
+}
+
+/*Kis képernyős nav kezdete*/
+
+@media only screen and (max-width:700px) {
+
+    .corrector {
+        height: 10vh;
+    }
+
+    nav {
+        position: fixed;
+        width: 90%;
+        padding-bottom: 3%;
+    }
+
+    nav img {
+        position: relative;
+    }
+
+    .navbar.mobile {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav.scroll {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .0), 0 6px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav #user_nav_off, nav #main_nav_off {
+        display: none;
+    }
+
+    .navbar.mobile #user_nav_off, .navbar.mobile #main_nav_off {
+        display: block;
+    }
+
+    .navbar.mobile #user_nav_off, .navbar.mobile #main_nav_off {
+        text-align: center;
+    }
+
+    .navbar #hamburger_icon {
+        display: block;
+        padding-top: 3.5%;
+        font-size: 6vw;
+        text-align: right;
+    }
+
+    nav #hamburger_icon a, nav #hamburger_icon a:link, nav #hamburger_icon a:visited, nav #hamburger_icon a:active {
+        color: black;
+    }
+
+    nav img#nav_logo_off {
+        width: 25%;
+        padding-top: 3.5%;
+    }
+
+    .navbar.mobile #user_nav_off p {
+        display: inline;
+    }
+
+    .navbar.mobile #user_nav_off {
+        padding-top: 7%;
+        font-size: 3vw;
+    }
+
+    .navbar.mobile #main_nav_off {
+        padding-top: 3%;
+    }
+
+    .navbar.mobile #main_nav_off h1 {
+        font-size: 5vw;
+        padding-bottom: 5%;
+    }
+    
+}
+
+/*Kis képernyős nav vége*/

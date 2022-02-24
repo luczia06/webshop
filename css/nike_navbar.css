@@ -1,0 +1,26 @@
+#nike_navbar {
+    margin: 2% 5%;
+}
+
+#nike_navbar #nike_nav_logo {
+    position: absolute;
+    width: 7vw;
+    height: 4vw;
+}
+
+#nike_navbar #nike_nav_logo img {
+    width: 100%;
+    height: 100%;
+}
+
+#nike_navbar #genders {
+    font-family: Futura_Condensed_Medium;
+    text-align: right;
+}
+
+#nike_navbar #genders h1 {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2.5vw;
+    padding-left: 2.5%;
+}

@@ -1,0 +1,53 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+@font-face {
+    font-family: Copperlate_Bold;
+    src: url(copperplate/copperplate_bold.ttf);
+}
+
+@font-face {
+    font-family: Copperlate_Light;
+    src: url(copperplate/Copperplate\ Gothic\ Light.ttf);
+}
+
+@font-face {
+    font-family: Futura_Bold;
+    src: url(futura/futur.ttf);
+}
+
+@font-face {
+    font-family: Futura_Medium;
+    src: url(futura/futura\ medium\ bt.ttf);
+}
+
+@font-face {
+    font-family: Futura_Medium_Italic;
+    src: url(futura/Futura\ Medium\ Italic\ font.ttf);
+}
+
+@font-face {
+    font-family: Futura_Condensed_Medium;
+    src: url(futura/futura\ medium\ condensed\ bt.ttf);
+}
+
+@font-face {
+    font-family: Futura_Condensed_ExtraBold;
+    src: url(futura/unicode.futurabb.ttf);
+}
+
+@font-face {
+    font-family: Futura_Light;
+    src: url(futura/futura\ light\ bt.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a, a:link, a:visited, a:active {
+    color: black;
+}

@@ -3,13 +3,36 @@
     padding-left: 5%;
     padding-right: 5%;
 }
+<<<<<<< main
+
 #top #title{
     width: 150%;
 }
+
+=======
+#top #title{
+    width: 150%;
+}
+>>>>>>> main
 #top #info{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 1.5%;
 }
+<<<<<<< main
+
+#top #title h1 {
+    font-family: Futura_Condensed_ExtraBold;
+}
+
+#top #title #name{
+    font-size: 3vw;
+}
+
+#top #title h1 .air{
+    font-family: Futura_Medium;
+}
+
+=======
 #top #title h1{
     font-family: Futura_Condensed_ExtraBold;
 }
@@ -19,11 +42,16 @@
 #top #title h1 .air{
     font-family: Futura_Medium;
 }
+>>>>>>> main
 #top #title p{
     font-size: 2vw;
     font-family: Futura_Condensed_Medium;
     margin-top: -5%;
 }
+<<<<<<< main
+
+=======
+>>>>>>> main
 #top #title #price{
     font-size: 1vw;
     text-align: center;
@@ -32,6 +60,18 @@
     border: solid black 6px;
     background-color: black;
 }
+<<<<<<< main
+
+#top #info p{
+    font-size: 1.5vw;
+}
+
+#top #info .info_text{
+    text-align: end;
+}
+
+#top #info #color_style{
+=======
 #top #info p{
     font-size: 1.5vw;
 }
@@ -40,11 +80,16 @@
 }
 
 #top #info #color_style {
+>>>>>>> main
     font-family: Futura_Condensed_Medium;
     display: flex;
 }
 
+<<<<<<< main
+#top #info #color_style p{
+=======
 #top #info #color_style p {
+>>>>>>> main
     text-align: end;
 }
 

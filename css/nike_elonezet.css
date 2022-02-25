@@ -1,15 +1,28 @@
-#top{
+/*Top rész kezdete*/
+
+#top {
     display: flex;
     padding-left: 5%;
     padding-right: 5%;
 }
 
-#top #title{
-    width: 150%;
+#top_back_next {
+    display: flex;
+    font-family: Futura_Condensed_Medium;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-#top #info{
-    font-family: Arial, Arial, Helvetica, sans-serif;
+#top_back_next .next {
+    margin-left: auto;
+}
+
+#top #title {
+    width: 200%;
+}
+
+#top #info {
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 1.5%;
 }
 
@@ -23,6 +36,10 @@
 
 #top #title h1 .air {
     font-family: Futura_Medium;
+}
+
+#top #title h1 .jordan {
+    color: red;
 }
 
 #top #title p {
@@ -56,6 +73,14 @@
 #top #info #color_style p {
     text-align: end;
 }
+
+/*Top rész vége*/
+
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+/*Bottom rész kezdete*/
 
 #bottom {
     display: flex;
@@ -107,3 +132,5 @@
     font-size: 1vw;
     font-family: Futura_Condensed_Medium;
 }
+
+/*Bottom rész vége*/

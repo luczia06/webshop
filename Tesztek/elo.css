@@ -6,8 +6,19 @@
     padding-right: 5%;
 }
 
+#top_back_next {
+    display: flex;
+    font-family: Futura_Condensed_Medium;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#top_back_next .next {
+    margin-left: auto;
+}
+
 #top #title {
-    width: 150%;
+    width: 200%;
 }
 
 #top #info {
@@ -25,6 +36,10 @@
 
 #top #title h1 .air {
     font-family: Futura_Medium;
+}
+
+#top #title h1 .jordan {
+    color: red;
 }
 
 #top #title p {
@@ -60,6 +75,10 @@
 }
 
 /*Top rész vége*/
+
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
 
 /*Bottom rész kezdete*/
 

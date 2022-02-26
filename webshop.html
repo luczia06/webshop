@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/links.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Shoes ON - Bejelentkezés</title>
+    <link rel="stylesheet" href="css/links.css">
+    <link rel="stylesheet" href="css/webshop.css">
+    <title>Shoes ON - Webshop</title>
 </head>
 <body>
     <div class="corrector"></div>
@@ -32,22 +31,22 @@
         </div>
     </nav>
 
-    <div id="login_reg">
-        <hr class="top_hr">
-        <h1 class="login_reg_sign">BEJELENTKEZÉS</h1>
-        <form name="login">
-            <div id="inputs">
-                <input type="text" id="email" name="email" placeholder="E-mail" required>
-                <div id="password">
-                    <input type="password" id="password" name="password" placeholder="Jelszó" required>
-                    <span><a href=""><i class="bi bi-eye"></i></a></span>
-                </div>
+    <div id="webshop">
+        <div id="nike">
+            <div id="brand_logo">
+                <a href="nike_webshop.html"><img src="img/nike-icon.jpg" alt="Nike"></a>
             </div>
-            <a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a>
-            <button onclick="Login()" >BEJELENTKEZÉS</button>
-            <div id="login_error"></div>
-        </form>
-        <hr class="down_hr">
+        </div>
+        <div id="adidas">
+            <div id="brand_logo">
+                <a href=""><img src="img/adidas.png" alt="Adidas"></a>
+            </div>
+        </div>
+        <div id="converse">
+            <div id="brand_logo">
+                <a href=""><img src="img/Converse_logo.svg.png" alt="Converse"></a>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -62,6 +61,7 @@
             <a href=""><p id="law">Cookie (süti) tájékoztató</p></a>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

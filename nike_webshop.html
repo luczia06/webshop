@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/links.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Shoes ON - Bejelentkezés</title>
+    <link rel="stylesheet" href="css/links.css">
+    <link rel="stylesheet" href="css/nike_webshop.css">
+    <title>Shoes ON - Nike</title>
 </head>
 <body>
     <div class="corrector"></div>
@@ -32,22 +31,27 @@
         </div>
     </nav>
 
-    <div id="login_reg">
-        <hr class="top_hr">
-        <h1 class="login_reg_sign">BEJELENTKEZÉS</h1>
-        <form name="login">
-            <div id="inputs">
-                <input type="text" id="email" name="email" placeholder="E-mail" required>
-                <div id="password">
-                    <input type="password" id="password" name="password" placeholder="Jelszó" required>
-                    <span><a href=""><i class="bi bi-eye"></i></a></span>
+    <div id="shoes">
+        <div id="nike_air">
+            <a href="nike_air_ferfi.html">
+                <div id="nike_shoe_img">
+                    <img src="img/f094af40-f82f-4fb9-a246-e031bf6fc411.webp" alt="Nike Air">
                 </div>
-            </div>
-            <a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a>
-            <button onclick="Login()" >BEJELENTKEZÉS</button>
-            <div id="login_error"></div>
-        </form>
-        <hr class="down_hr">
+                <div id="nike_air_text">
+                    <h1>NIKE <span class="air">AIR</span></h1>
+                </div>
+            </a>
+        </div>
+        <div id="nike_jordan">
+            <a href="nike_jordan_ferfi.html">
+                <div id="nike_shoe_img">
+                    <img src="img/263-2635088_air-jordan-png-air-jordan-1-iphone-transparent-removebg-preview.png" alt="Nike Jordan">
+                </div>
+                <div id="nike_jordan_text">
+                    <h1>NIKE <span class="jordan">JORDAN</span></h1>
+                </div>
+            </a>
+        </div>
     </div>
 
     <footer>
@@ -62,6 +66,7 @@
             <a href=""><p id="law">Cookie (süti) tájékoztató</p></a>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

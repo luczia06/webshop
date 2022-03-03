@@ -68,7 +68,7 @@ body {
     float: right;
 }
 
-.card a i {
+.card span i {
     font-size: 25px;
     padding-top: 7%;
     float: left;

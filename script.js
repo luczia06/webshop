@@ -122,10 +122,13 @@ function ShowPassword() {
     }
 }
 
+//<i class="bi bi-heart-fill"></i>
 function Favorite(element) {
     event.preventDefault();
-    console.log(element)
+    console.log(JSON.stringify(element))
     element.style = 'color: red';
+    element['i'].classList.remove('bi bi-heart"');
+    element['i'].classList.add('bi bi-heart-fill');
 }
 
 window.onload = function() {

@@ -1,0 +1,49 @@
+#shoes {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+#shoes h1 {
+    font-size: 3vw;
+}
+
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+#shoes #nike_jordan {
+    margin-left: auto;
+}
+
+#shoes #nike_shoe_img {
+    background-color: #f6f6f6;
+    height: 20vw;
+    width: 30vw;
+}
+
+#shoes #nike_shoe_img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#shoes #nike_air #nike_air_text {
+    font-family: Futura;
+}
+
+#shoes #nike_air #nike_air_text h1 .air {
+    font-family: Futura_Medium;
+}
+
+#shoes #nike_jordan #nike_jordan_text {
+    font-family: Futura;
+}
+
+#shoes #nike_jordan #nike_jordan_text h1 .jordan {
+    color: red;
+}

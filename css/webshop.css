@@ -1,0 +1,43 @@
+#webshop {
+    text-align: center;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+#webshop #brand_logo {
+    padding: 3%;
+    margin: auto;
+}
+
+#webshop #nike #brand_logo {
+    height: 8vw;
+    width: 15vw;
+}
+
+#webshop #adidas #brand_logo {
+    height: 8vw;
+    width: 12vw;
+}
+
+#webshop #converse #brand_logo {
+    height: 8vw;
+    width: 12vw;
+}
+
+#webshop #brand_logo a img {
+    height: 100%;
+    width: 100%;
+}
+
+#webshop #nike {
+    background-color: white;
+}
+
+#webshop #adidas {
+    background-color: black;
+}
+
+#webshop #converse {
+    background-color: white;
+}

@@ -25,8 +25,14 @@ function GetCookie(name) { //Returns an object
 }
 
 function isValidName(name) {
-    var expr = /[0-9]+/g;
-    if(name.match(expr)) { 
+    var expr = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
+    if(name.match(expr)) {
+        var first_letter = name[0]
+        if (first_letter == first_letter.toUpperCase()) {
+
+        } else {
+            console.log('first letter not uppercase')
+        }
         return true;
     } else { 
         return false;
@@ -51,8 +57,6 @@ function isValidEmail(email) {
     }
 }
 
-//Disclaimer: Everything needs testing
-
 function Register() {
     event.preventDefault();
 
@@ -73,17 +77,15 @@ function Register() {
                 if (isValidEmail(email)) {
                     if (isValidPassword(password)) {
                         SetCookie('login', {firstname, lastname, email, password});
-                        console.log('Cookie set. firstname: '+ firstname + 'lastname: ' + lastname + 'email: ' + email + ' password: ' + password);
+                        console.log('Cookie set. firstname: '+ firstname + ' lastname: ' + lastname + ' email: ' + email + ' password: ' + password);
+                        window.location.href = "login.html";
                     } else {
-                        console.log('1')
                         document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
                     }
                 } else {
-                    console.log('2')
                     document.getElementById('login_error').innerHTML = 'Nem megfelelő email!';
                 }
             } else {
-                console.log('3')
                 document.getElementById('login_error').innerHTML = 'Nem megfelelő név!';
             }
         }
@@ -120,8 +122,13 @@ function ShowPassword() {
     }
 }
 
+//<i class="bi bi-heart-fill"></i>
 function Favorite(element) {
+    event.preventDefault();
+    console.log(JSON.stringify(element))
     element.style = 'color: red';
+    element['i'].classList.remove('bi bi-heart"');
+    element['i'].classList.add('bi bi-heart-fill');
 }
 
 window.onload = function() {

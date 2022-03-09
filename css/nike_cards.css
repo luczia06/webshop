@@ -50,6 +50,10 @@ body {
     font-family: Futura_Medium;
 }
 
+.card .card-body .card-title .jordan {
+    color: red;
+}
+
 .card .card-body .card-title {
     position: absolute;
     left: 10%;
@@ -64,7 +68,7 @@ body {
     float: right;
 }
 
-.card a i {
+.card span i {
     font-size: 25px;
     padding-top: 7%;
     float: left;

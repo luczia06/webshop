@@ -15,8 +15,8 @@
 
 **A 2021-2022-es tanév 9/B 2. csoport féléves projektmunkája.**
 
-![Logo](https://raw.githubusercontent.com/luczia06/webshop/main/Logo/Full/TWW/shoes_on-logo(FTWW).svg#gh-dark-mode-only)
-![Logo](https://raw.githubusercontent.com/luczia06/webshop/main/Logo/Full/TBB/shoes_on-logo(FTBB).svg#gh-light-mode-only)
+![Logo](https://raw.githubusercontent.com/luczia06/webshop/main/Logo/Full/TWW/shoes_on-logo(FTWW).png#gh-dark-mode-only)
+![Logo](https://raw.githubusercontent.com/luczia06/webshop/main/Logo/Full/TBB/shoes_on-logo(FTBB).png#gh-light-mode-only)
 
 A webshop-unk neve a ***SHOES ON*** nevet viseli, melynek témája a cipőkre épül. Három márkával foglalkozunk: NIKE, ADIDAS és CONVERSE. 
 
@@ -39,7 +39,7 @@ A webshop-unk neve a ***SHOES ON*** nevet viseli, melynek témája a cipőkre é
 - [Sebestyén Zsolt](https://github.com/Sebokanyaloka)
 - [Szabó Csanád](https://github.com/xanaxvagyokteinasgeci)
 - [Katona Zoltán](https://github.com/eggseggstentacion)
-- [Szinhalmi Nándor](https://github.com/Bunderasz)
+- [Szihalmi Nándor](https://github.com/Bunderasz)
 - [Turcsányi Máté](https://github.com/myusernameisinvalid)
 - [Somogyi Bánk](https://github.com/somogyib05)
 - [Kollár Botond](https://github.com/Boti150)

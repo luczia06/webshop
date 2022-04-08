@@ -135,10 +135,72 @@ function Favorite(element) {
         element.getElementsByTagName("i")[0].classList.remove('bi-heart');
         element.getElementsByTagName("i")[0].classList.add('bi-heart-fill');
     }
+
+    SaveFavorites()
+}
+
+function SaveFavorites() {
+    let cards_html = document.getElementsByClassName('card');
+    let cards = {};
+
+    for (let i = 0; i < cards_html.length; i++) {
+        const element = cards_html[i];
+        
+        let icon = element.getElementsByTagName("i")[0];
+
+        if (icon.classList.contains('bi-heart')) { //un filled
+            cards[i] = {favorited:false};
+        } else if (icon.classList.contains('bi-heart-fill')) { //filled
+            cards[i] = {favorited:true};
+        }
+    }
+
+    SetCookie('favorites', cards)
+
+    for (let i = 0; i < cards.length; i++) {
+        const element = cards[i];
+        
+        console.log(element);
+    }
+}
+
+function LoadFavorites() {
+    let cards = GetCookie('favorites');
+
+    //console.log(cards);
+
+    for (const key in cards) {
+        console.log(key)
+        const element = cards[key];
+
+        //console.log(element);
+        
+        console.log(cards[key].favorited);
+
+        if (cards[key].favorited == true) {
+            console.log(key);
+        }
+    }
+/*
+    for (let i = 0; i < cards.length; i++) {
+        console.log('aaa');
+        console.log(cards[i].favorited);
+
+        i_tag = document.getElementsByTagName('i')[i];
+
+        if (elementb) {
+            i_tag.style = 'color: red';
+            i_tag.classList.remove('bi-heart');
+            i_tag.classList.add('bi-heart-fill');
+        }
+    }
+    */
 }
 
 window.onload = function() {
-    console.log('hey')
+    console.log('hey');
+
+    LoadFavorites();
 };
 
 //Navbar kezdete

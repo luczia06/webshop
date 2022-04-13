@@ -1,0 +1,31 @@
+Logó nyomtatás
+Kerek orr
+Párnázott fedőtalp
+5 lyukú fűzés
+Vegyes anyag
+Kontraszt színű toldások
+Hálóbetétek
+Címkedarab/címkezászló
+Ton inTon tűzések
+Párnázott szárperem
+Strukturált fogantyú
+Rugalmas járótalp
+Profil
+Háló
+Air Mesh
+Overlays
+Megerősített sarok
+Fűzős zár
+Sarokmagasság: Lapos sarok (0-3 cm)
+Súly: 200-300 g
+Felső anyag: Textil, Szintetikus
+Bélés és fedőtalp: Textil
+Járótalp: Gumi
+Sportág: Futás
+Sportág: Életmód
+Funkciók: Csillapítás
+Felhasználási terület: Utca/edzés
+Sportcipő stílusa: Futás
+Talp technológia: OrthoLite
+Igény: Hobbi
+Technológia: Cloudfoam

@@ -43,27 +43,19 @@ body {
 }
 
 .card .card-body {
-    max-height: 200px;
-}
-
-.card .card-body .card-title .air {
-    font-family: Futura_Medium;
-}
-
-.card .card-body .card-title .jordan {
-    color: red;
+    max-height: 300px;
 }
 
 .card .card-body .card-title {
     position: absolute;
     left: 10%;
     right: 10%;
-    font-family: Futura_Condensed_ExtraBold;
+    font-family: Futura_Bold;
     margin-top: 3%;
 }
 
 .card a h5 {
-    font-family: Futura_Light;
+    font-family: Futura_Medium;
     padding-top: 8.5%;
     float: right;
 }
@@ -80,14 +72,13 @@ body {
 }
 
 .card .card-text {
-    font-family: Futura_Condensed_Medium;
+    font-family: Futura_Medium;
     letter-spacing: .1vw;
-    margin-top: 25%;
-    margin-left: 32%;
-    margin-right: 32%;
+    margin-top: 35%;
+    margin-left: 28%;
+    margin-right: 28%;
     padding: 2%;
-    color: white;
-    background-color: black;
+    color: black;
 }
 
 .card img {

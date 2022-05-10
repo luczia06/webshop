@@ -1,0 +1,26 @@
+#adidas_navbar {
+    margin: 2% 5%;
+}
+
+#adidas_navbar #adidas_nav_logo {
+    position: absolute;
+    width: 6vw;
+    height: 4vw;
+}
+
+#adidas_navbar #adidas_nav_logo img {
+    width: 100%;
+    height: 100%;
+}
+
+#adidas_navbar #genders {
+    font-family: Futura_Bold;
+    text-align: right;
+}
+
+#adidas_navbar #genders h1 {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 2.5vw;
+    padding-left: 2.5%;
+}

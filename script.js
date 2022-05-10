@@ -7,7 +7,7 @@ function SetCookie(name, obj) {
     var cookie = [name, '=', encoded_obj, '; domain=.', window.location.host.toString(), '; path=/;'].join('');
     document.cookie = cookie;
     */
-   /* Local Storage Version */
+    /* Local Storage Version */
     var encoded_obj = JSON.stringify(obj);
     localStorage.setItem(name, encoded_obj);
 }
@@ -26,7 +26,7 @@ function GetCookie(name) { //Returns an object
 
 function isValidName(name) {
     var expr = /^[A-Za-zÀ-ÖØ-öø-ÿ]+$/;
-    if(name.match(expr)) {
+    if (name.match(expr)) {
         var first_letter = name[0]
         if (first_letter == first_letter.toUpperCase()) {
 
@@ -34,25 +34,25 @@ function isValidName(name) {
             console.log('first letter not uppercase')
         }
         return true;
-    } else { 
+    } else {
         return false;
     }
 }
 
-function isValidPassword(password) { 
+function isValidPassword(password) {
     var expr = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-    if(password.match(expr)) { 
+    if (password.match(expr)) {
         return true;
-    } else { 
+    } else {
         return false;
     }
 }
 
 function isValidEmail(email) {
     var expr = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(email.match(expr)) { 
+    if (email.match(expr)) {
         return true;
-    } else { 
+    } else {
         return false;
     }
 }
@@ -76,8 +76,8 @@ function Register() {
             if (isValidName(firstname) && isValidName(lastname)) {
                 if (isValidEmail(email)) {
                     if (isValidPassword(password)) {
-                        SetCookie('login', {firstname, lastname, email, password});
-                        console.log('Cookie set. firstname: '+ firstname + ' lastname: ' + lastname + ' email: ' + email + ' password: ' + password);
+                        SetCookie('login', { firstname, lastname, email, password });
+                        console.log('Cookie set. firstname: ' + firstname + ' lastname: ' + lastname + ' email: ' + email + ' password: ' + password);
                         window.location.href = "login.html";
                     } else {
                         document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
@@ -122,17 +122,85 @@ function ShowPassword() {
     }
 }
 
-//<i class="bi bi-heart-fill"></i>
+//<span onclick="Favorite(this)"><i class="bi bi-heart"></i></span>
 function Favorite(element) {
     event.preventDefault();
-    console.log(JSON.stringify(element))
-    element.style = 'color: red';
-    element['i'].classList.remove('bi bi-heart"');
-    element['i'].classList.add('bi bi-heart-fill');
+
+    if (element.style.color === 'red') {
+        element.style = 'color: black';
+        element.getElementsByTagName("i")[0].classList.add('bi-heart');
+        element.getElementsByTagName("i")[0].classList.remove('bi-heart-fill');
+    } else {
+        element.style = 'color: red';
+        element.getElementsByTagName("i")[0].classList.remove('bi-heart');
+        element.getElementsByTagName("i")[0].classList.add('bi-heart-fill');
+    }
+
+    SaveFavorites()
+}
+
+function SaveFavorites() {
+    let cards_html = document.getElementsByClassName('card');
+    let cards = {};
+
+    for (let i = 0; i < cards_html.length; i++) {
+        const element = cards_html[i];
+        
+        let icon = element.getElementsByTagName("i")[0];
+
+        if (icon.classList.contains('bi-heart')) { //un filled
+            cards[i] = {favorited:false};
+        } else if (icon.classList.contains('bi-heart-fill')) { //filled
+            cards[i] = {favorited:true};
+        }
+    }
+
+    SetCookie('favorites', cards)
+
+    for (let i = 0; i < cards.length; i++) {
+        const element = cards[i];
+        
+        console.log(element);
+    }
+}
+
+function LoadFavorites() {
+    let cards = GetCookie('favorites');
+
+    //console.log(cards);
+
+    for (const key in cards) {
+        console.log(key)
+        const element = cards[key];
+
+        //console.log(element);
+        
+        console.log(cards[key].favorited);
+
+        if (cards[key].favorited == true) {
+            console.log(key);
+        }
+    }
+/*
+    for (let i = 0; i < cards.length; i++) {
+        console.log('aaa');
+        console.log(cards[i].favorited);
+
+        i_tag = document.getElementsByTagName('i')[i];
+
+        if (elementb) {
+            i_tag.style = 'color: red';
+            i_tag.classList.remove('bi-heart');
+            i_tag.classList.add('bi-heart-fill');
+        }
+    }
+    */
 }
 
 window.onload = function() {
-    console.log('hey')
+    console.log('hey');
+
+    LoadFavorites();
 };
 
 //Navbar kezdete
@@ -141,12 +209,12 @@ window.onload = function() {
 
 myID = document.getElementById("navbar");
 var myScrollFunc = function() {
-var y = window.scrollY;
+    var y = window.scrollY;
     if (y >= 50) {
         myID.className = "navbar scroll"
     } else {
         myID.className = "navbar"
-    } 
+    }
 };
 window.addEventListener("scroll", myScrollFunc);
 
@@ -155,12 +223,12 @@ window.addEventListener("scroll", myScrollFunc);
 //Navbar hamburger ikon-ra való nyomáskor megjelenő menü kezdete
 
 function myFunction() {
-  var x = document.getElementById("nav_id");
-  if (x.className === "navbar") {
-    x.className += " mobile";
-  } else {
-    x.className = "navbar";
-  }
+    var x = document.getElementById("nav_id");
+    if (x.className === "navbar") {
+        x.className += " mobile";
+    } else {
+        x.className = "navbar";
+    }
 }
 
 //Navbar hamburger ikon-ra való nyomáskor megjelenő menü vége
@@ -171,12 +239,12 @@ function myFunction() {
 
 myID = document.getElementById("navbar_off");
 var myScrollFunc = function() {
-var y = window.scrollY;
+    var y = window.scrollY;
     if (y >= 50) {
         myID.className = "navbar_off scroll"
     } else {
         myID.className = "navbar_off"
-    } 
+    }
 };
 window.addEventListener("scroll", myScrollFunc);
 

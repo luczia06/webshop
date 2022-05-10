@@ -69,6 +69,7 @@ body {
 }
 
 .card span i {
+    cursor: pointer;
     font-size: 25px;
     padding-top: 7%;
     float: left;

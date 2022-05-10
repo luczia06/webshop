@@ -1,3 +1,6 @@
+var logged_in = false
+var logged_user = {}
+
 //JSON.stringify(value) -- encode
 //JSON.parse(result[1])) -- decode
 
@@ -102,8 +105,8 @@ function Login() {
 
     if (login_obj && email && password) {
         if (email === login_obj.email && password === login_obj.password) {
-            //login here
-            document.getElementById('login_error').innerHTML = 'logged in -- under construction';
+            SetCookie('logged_in', true)
+            document.getElementById('fiok').innerHTML = 'Üdv, '+login_obj.firstname;
         } else {
             document.getElementById('login_error').innerHTML = 'Valami nem jó';
         }
@@ -197,9 +200,26 @@ function LoadFavorites() {
     */
 }
 
+function CheckUser() {
+    login_obj = GetCookie('login');
+    logged_in = GetCookie('logged_in');
+    if (logged_in) {
+        document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
+    }
+}
+
+function Logout() {
+    logged_in = GetCookie('logged_in');
+    login_div = document.getElementById('login_reg').innerHTML
+    if (logged_in && login_div) {
+        document.getElementById('login_reg').innerHTML = '';
+    }
+}
+
 window.onload = function() {
     console.log('hey');
 
+    CheckUser();
     LoadFavorites();
 };
 

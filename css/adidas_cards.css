@@ -1,0 +1,87 @@
+body {
+    color: black;
+}
+
+#top_things {
+    margin: 3% 5%;
+}
+
+#top_things #title h1 {
+    font-family: Futura_Condensed_ExtraBold;
+    font-size: 3vw;
+    margin-bottom: 1.5%;
+}
+
+#top_things #title h1 .air{
+    font-family: Futura_Medium;
+}
+
+#top_things #search_categories{
+    width: 20%;
+}
+
+#top_things #search_categories input::-webkit-input-placeholder {
+    font-family: Futura_Condensed_Medium;
+  }
+  
+#top_things #search_categories input:-ms-input-placeholder {
+    font-family: Futura_Condensed_Medium;
+}
+  
+#top_things #search_categories input:-moz-placeholder {
+    font-family: Futura_Condensed_Medium;
+}
+  
+#top_things #search_categories input::-moz-placeholder {
+    font-family: Futura_Condensed_Medium;
+}
+
+.card {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.card .card-body {
+    max-height: 300px;
+}
+
+.card .card-body .card-title {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    font-family: Futura_Bold;
+    margin-top: 3%;
+}
+
+.card a h5 {
+    font-family: Futura_Medium;
+    padding-top: 8.5%;
+    float: right;
+}
+
+.card span i {
+    cursor: pointer;
+    font-size: 25px;
+    padding-top: 7%;
+    float: left;
+}
+
+.card a {
+    color: black;
+}
+
+.card .card-text {
+    font-family: Futura_Medium;
+    letter-spacing: .1vw;
+    margin-top: 35%;
+    margin-left: 28%;
+    margin-right: 28%;
+    padding: 2%;
+    color: black;
+}
+
+.card img {
+    height: 200px; 
+    object-fit: cover;
+}

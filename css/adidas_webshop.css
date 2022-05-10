@@ -1,0 +1,41 @@
+#shoes {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    align-items: center;
+    text-align: center;
+}
+
+#shoes h1 {
+    font-size: 3vw;
+}
+
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+#shoes #adidas_performance {
+    margin-left: auto;
+}
+
+#shoes #adidas_shoe_img {
+    background-color: #f6f6f6;
+    height: 20vw;
+    width: 30vw;
+}
+
+#shoes #adidas_shoe_img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+#shoes #adidas_originals #adidas_originals_text {
+    font-family: Futura_Bold;
+}
+
+#shoes #adidas_performance #adidas_performance_text {
+    font-family: Futura_Bold;
+}

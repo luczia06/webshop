@@ -107,6 +107,7 @@ function Login() {
         if (email === login_obj.email && password === login_obj.password) {
             SetCookie('logged_in', true)
             document.getElementById('fiok').innerHTML = 'Üdv, '+login_obj.firstname;
+            document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
         } else {
             document.getElementById('login_error').innerHTML = 'Valami nem jó';
         }
@@ -203,17 +204,19 @@ function LoadFavorites() {
 function CheckUser() {
     login_obj = GetCookie('login');
     logged_in = GetCookie('logged_in');
+    login_div = document.getElementById('login_reg').innerHTML
     if (logged_in) {
         document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
+        if (login_div) {
+            document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
+        }
     }
 }
 
 function Logout() {
-    logged_in = GetCookie('logged_in');
-    login_div = document.getElementById('login_reg').innerHTML
-    if (logged_in && login_div) {
-        document.getElementById('login_reg').innerHTML = '';
-    }
+    SetCookie('logged_in', false)
+    document.getElementById('fiok').innerHTML = 'Fiók';
+    document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">BEJELENTKEZÉS</h1><form name="login"><div id="inputs"><input type="text" id="email" name="email" placeholder="E-mail" required><div id="password"><input type="password" id="password" name="password" placeholder="Jelszó" required><span><a href=""><i class="bi bi-eye"></i></a></span></div></div><a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a><button onclick="Login()" >BEJELENTKEZÉS</button><div id="login_error"></div></form><hr class="down_hr">';
 }
 
 window.onload = function() {

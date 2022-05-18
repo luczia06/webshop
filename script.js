@@ -147,16 +147,22 @@ function SaveFavorites() {
     let cards_html = document.getElementsByClassName('card');
     let cards = {};
 
+    let favorites = GetCookie('favorites')
+
     for (let i = 0; i < cards_html.length; i++) {
         const element = cards_html[i];
         
         let icon = element.getElementsByTagName("i")[0];
 
         if (icon.classList.contains('bi-heart')) { //un filled
-            cards[i] = {favorited:false};
+            cards[i] = {};
         } else if (icon.classList.contains('bi-heart-fill')) { //filled
-            cards[i] = {favorited:true};
+            cards[i] = {};
         }
+
+        favorites.forEach(element => {
+            console.log(element);
+        });
     }
 
     SetCookie('favorites', cards)

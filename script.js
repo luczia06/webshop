@@ -130,6 +130,8 @@ function ShowPassword() {
 function Favorite(element) {
     event.preventDefault();
 
+    console.log(element);
+
     if (element.style.color === 'red') {
         element.style = 'color: black';
         element.getElementsByTagName("i")[0].classList.add('bi-heart');
@@ -208,22 +210,32 @@ function LoadFavorites() {
 }
 
 function CheckUser() {
-    login_obj = GetCookie('login');
-    logged_in = GetCookie('logged_in');
-    login_div = document.getElementById('login_reg').innerHTML
-    if (logged_in) {
-        document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
-        if (login_div) {
-            document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
+    try {
+        //login_obj = GetCookie('login');
+        logged_in = GetCookie('logged_in');
+        //login_div = document.getElementById('login_reg').innerHTML
+        if (logged_in) {
+            let fiok = document.getElementById('fiok')
+            fiok.innerHTML = 'Kijelentkezés';
+            fiok.getElementsByTagName("span")[0].className = "glyphicon glyphicon-log-out";
+            //document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
+           /* if (login_div) {
+                document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
+            }
+            */
         }
-    }
+    }  catch(error) {
+        //not on login
+    } 
 }
 
 function Logout() {
     SetCookie('logged_in', false)
-    document.getElementById('fiok').innerHTML = 'Fiók';
-    document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">BEJELENTKEZÉS</h1><form name="login"><div id="inputs"><input type="text" id="email" name="email" placeholder="E-mail" required><div id="password"><input type="password" id="password" name="password" placeholder="Jelszó" required><span><a href=""><i class="bi bi-eye"></i></a></span></div></div><a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a><button onclick="Login()" >BEJELENTKEZÉS</button><div id="login_error"></div></form><hr class="down_hr">';
+    let fiok = document.getElementById('fiok')
+    fiok.innerHTML = 'Bejelentkezés';
+    fiok.getElementsByTagName("span")[0].className = "glyphicon glyphicon-log-in";
 }
+
 
 window.onload = function() {
     console.log('hey');
@@ -231,61 +243,3 @@ window.onload = function() {
     CheckUser();
     LoadFavorites();
 };
-
-//Navbar kezdete
-
-//Navbar scrolling kezdete
-
-myID = document.getElementById("navbar");
-var myScrollFunc = function() {
-    var y = window.scrollY;
-    if (y >= 50) {
-        myID.className = "navbar scroll"
-    } else {
-        myID.className = "navbar"
-    }
-};
-window.addEventListener("scroll", myScrollFunc);
-
-//Navbar scrolling vége
-
-//Navbar hamburger ikon-ra való nyomáskor megjelenő menü kezdete
-
-function myFunction() {
-    var x = document.getElementById("nav_id");
-    if (x.className === "navbar") {
-        x.className += " mobile";
-    } else {
-        x.className = "navbar";
-    }
-}
-
-//Navbar hamburger ikon-ra való nyomáskor megjelenő menü vége
-
-//Navbar vége
-
-//Ugyan az csak a Bootstrap-es részre vonatkozóan kezdete
-
-myID = document.getElementById("navbar_off");
-var myScrollFunc = function() {
-    var y = window.scrollY;
-    if (y >= 50) {
-        myID.className = "navbar_off scroll"
-    } else {
-        myID.className = "navbar_off"
-    }
-};
-window.addEventListener("scroll", myScrollFunc);
-
-/*
-function myFunction() {
-  var x = document.getElementById("nav_id_off");
-  if (x.className === "navbar_off") {
-    x.className += " mobile";
-  } else {
-    x.className = "navbar_off";
-  }
-}
-*/
-
-//Ugyan az csak a Bootstrap-es részre vonatkozóan vége

@@ -6,32 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/links.css">
     <link rel="stylesheet" href="css/nike_cards.css">
-    <link rel="stylesheet" href="css/navbar_bootstrap.css">
     <link rel="stylesheet" href="css/nike_navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Shoes ON - Nike Air Férfi</title>
 </head>
 <body>
-  <div class="corrector"></div>
-  <nav class="navbar_off" id="navbar_off">
-      <div class="navbar_off" id="nav_id_off">
-          <a href="index.html"><img id="nav_logo_off" src="Logo/Tittle & Slogan/TBB/shoes_on-logo(2TBB).svg" alt=""></a>
-          <div id="hamburger_icon">
-              <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="bi bi-list"></i></a>
-          </div>
-          <div id="user_nav_off">
-              <a href=""><i class="bi bi-bag-fill"></i>&nbsp;&nbsp;<p>Kosár</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="fav.html"><i class="bi bi-heart-fill"></i>&nbsp;&nbsp;<p>Kedvencek</p></a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="login.html"><i class="bi bi-person-fill"></i>&nbsp;&nbsp;<p id="fiok">Fiók</p></a>
-          </div>
-          <div id="main_nav_off">
-              <a href="index.html"><h1>Főoldal</h1></a>
-              <a href=""><h1>Rólunk</h1></a>
-              <a href="webshop.html"><h1>Webshop</h1></a>
-          </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">
+            <!--<img style="width: 100px; height: 80px; padding: 5px; object-fit: cover;" src="Logo/Full/TBB/shoes_on-logo(FTBB).png" alt="Logó">
+            <img id="nav_logo" src="Logo/Tittle & Slogan/TBB/shoes_on-logo(2TBB).svg" alt="">-->
+            logó ide
+        </a>
       </div>
-  </nav>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Főoldal</a></li>
+            
+            <li><a href="nike_webshop.html">Nike</a></li>
+            <li><a href="adidas_webshop.html">Adidas</a></li>
+            <!-- 
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Adidas Originals<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="adidas_originals_ferfi.html">Férfi</a></li>
+                    <li><a href="adidas_originals_noi.html">Női</a></li>
+                    <li><a href="adidas_originals_gyermek.html">Gyermek</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Adidas Performance<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="adidas_performance_ferfi.html">Férfi</a></li>
+                    <li><a href="adidas_performance_noi.html">Női</a></li>
+                    <li><a href="adidas_performance_gyermek.html">Gyermek</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nike Air<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="nike_air_ferfi.html">Férfi</a></li>
+                    <li><a href="nike_air_noi.html">Női</a></li>
+                    <li><a href="nike_air_gyermek.html">Gyermek</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nike Jordan<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="nike_jordan_ferfi.html">Férfi</a></li>
+                    <li><a href="nike_jordan_noi.html">Női</a></li>
+                    <li><a href="nike_jordan_gyermek.html">Gyermek</a></li>
+                </ul>
+            </li>
+            -->
+
+            <li><a href="us.html">Rólunk</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="fav.html"><span class="glyphicon glyphicon-heart"></span> Kedvencek</a></li>
+            <li><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Kosár</a></li>
+            <li><a href="reg.html"><span class="glyphicon glyphicon-user"></span> Regisztrálás</a></li>
+            <li><a id="fiok" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Bejelentkezés</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
 
 <div id="nike_navbar">
   <div id="nike_nav_logo">

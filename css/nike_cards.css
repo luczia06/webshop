@@ -56,22 +56,26 @@ body {
 
 .card .card-body .card-title {
     position: absolute;
-    left: 10%;
-    right: 10%;
+    left: 0%;
+    right: 62%;
     font-family: Futura_Condensed_ExtraBold;
-    margin-top: 3%;
+    margin-top: -30px;
 }
 
 .card a h5 {
     font-family: Futura_Light;
-    padding-top: 8.5%;
+    padding-top: 15%;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    margin-left: -50em;
     float: right;
 }
 
 .card span i {
     cursor: pointer;
     font-size: 25px;
-    padding-top: 7%;
+    padding-top: 15%;
+    
     float: left;
 }
 
@@ -82,7 +86,7 @@ body {
 .card .card-text {
     font-family: Futura_Condensed_Medium;
     letter-spacing: .1vw;
-    margin-top: 25%;
+    margin-top: 15%;
     margin-left: 32%;
     margin-right: 32%;
     padding: 2%;
@@ -91,6 +95,6 @@ body {
 }
 
 .card img {
-    height: 200px; 
+    height: 350px;
     object-fit: cover;
 }

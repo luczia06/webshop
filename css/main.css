@@ -38,3 +38,10 @@ body {
 .us .leaders .profile {
     width: 10%;
 }
+
+.us .profile_img img {
+    border-radius: 50%;
+    border: solid black 1px;
+    height: 50%;
+    width: 50%
+}

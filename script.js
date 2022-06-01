@@ -210,7 +210,7 @@ function LoadFavorites() {
 function CheckUser() {
     login_obj = GetCookie('login');
     logged_in = GetCookie('logged_in');
-    login_div = document.getElementById('login_reg').innerHTML
+    login_div = document.getElementById('login_reg').innerHTML;
     if (logged_in) {
         document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
         if (login_div) {
@@ -223,6 +223,15 @@ function Logout() {
     SetCookie('logged_in', false)
     document.getElementById('fiok').innerHTML = 'Fiók';
     document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">BEJELENTKEZÉS</h1><form name="login"><div id="inputs"><input type="text" id="email" name="email" placeholder="E-mail" required><div id="password"><input type="password" id="password" name="password" placeholder="Jelszó" required><span><a href=""><i class="bi bi-eye"></i></a></span></div></div><a href="reg.html"><p class="reg">Nincs még fiókod? Regisztrálj!</p></a><button onclick="Login()" >BEJELENTKEZÉS</button><div id="login_error"></div></form><hr class="down_hr">';
+}
+
+function PutToCart() {
+    const cart = GetCookie('cart');
+    let item_name = document.getElementById('name');
+    let sizes = document.getElementById('sizes');
+    let item_size = sizes.options[sizes.selectedIndex].text;
+
+    cart.push({name : item_name, size : item_size});
 }
 
 window.onload = function() {
@@ -240,9 +249,9 @@ myID = document.getElementById("navbar");
 var myScrollFunc = function() {
     var y = window.scrollY;
     if (y >= 50) {
-        myID.className = "navbar scroll"
+        myID.className = "navbar scroll";
     } else {
-        myID.className = "navbar"
+        myID.className = "navbar";
     }
 };
 window.addEventListener("scroll", myScrollFunc);

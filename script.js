@@ -1,5 +1,4 @@
-var logged_in = false
-var logged_user = {}
+//code by deep .. too many people in this project
 
 //JSON.stringify(value) -- encode
 //JSON.parse(result[1])) -- decode
@@ -66,58 +65,77 @@ function Register() {
     var lastname = document.forms["reg"]["lastname"].value;
     var firstname = document.forms["reg"]["firstname"].value;
     var email = document.forms["reg"]["email"].value;
-    var password = document.forms["reg"]["password"].value;
+    var password = document.forms["reg"]["password_input"].value;
 
     login_obj = GetCookie('login');
-
     if (login_obj) {
         if (email === login_obj['email']) {
-            document.getElementById('login_error').innerHTML = 'Már van fiókod!';
+            document.getElementById('login_error').innerHTML = 'Már van fiókod ezzel az emaillel!';
+            return;
         }
-    } else {
-        if (lastname && firstname && email && password) {
-            if (isValidName(firstname) && isValidName(lastname)) {
-                if (isValidEmail(email)) {
-                    if (isValidPassword(password)) {
-                        SetCookie('login', { firstname, lastname, email, password });
-                        console.log('Cookie set. firstname: ' + firstname + ' lastname: ' + lastname + ' email: ' + email + ' password: ' + password);
-                        window.location.href = "login.html";
-                    } else {
-                        document.getElementById('login_error').innerHTML = 'Nem elég erős a jelszó!';
-                    }
-                } else {
-                    document.getElementById('login_error').innerHTML = 'Nem megfelelő email!';
-                }
-            } else {
-                document.getElementById('login_error').innerHTML = 'Nem megfelelő név!';
-            }
+        if (lastname === login_obj['lastname'] || firstname === login_obj['firstname']) {
+            document.getElementById('login_error').innerHTML = 'Már van fiókod ezzel az névvel!';
+            return;
         }
     }
+
+    if (!isValidName(lastname)) {
+        document.getElementById('login_error').innerHTML = 'Nem megfelelő vezetéknév!';
+        return;
+    }
+    if (!isValidName(firstname)) {
+        document.getElementById('login_error').innerHTML = 'Nem megfelelő keresztnév!';
+        return;
+    }
+    if (!isValidEmail(email)) {
+        document.getElementById('login_error').innerHTML = 'Nem megfelelő email!';
+        return;
+    }
+    if (!isValidPassword(password)) {
+        document.getElementById('login_error').innerHTML = 'Nem elég erős jelszó!';
+        return;
+    }
+
+    SetCookie('login', { firstname, lastname, email, password });
+    console.log('Cookie set. firstname: ' + firstname + ' lastname: ' + lastname + ' email: ' + email + ' password: ' + password);
+    window.location.href = "login.html";
 }
 
 function Login() {
     event.preventDefault();
 
     var email = document.forms["login"]["email"].value;
-    var password = document.forms["login"]["password"].value;
-
+    var password = document.forms["login"]["password_input"].value;
     login_obj = GetCookie('login');
 
-    if (login_obj && email && password) {
-        if (email === login_obj.email && password === login_obj.password) {
-            SetCookie('logged_in', true)
-            document.getElementById('fiok').innerHTML = 'Üdv, '+login_obj.firstname;
-            document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
-        } else {
-            document.getElementById('login_error').innerHTML = 'Valami nem jó';
-        }
-    } else {
+    if (!login_obj) {
         document.getElementById('login_error').innerHTML = 'Nincs fiókod, regisztrálj!';
+        return;
     }
+    if (!email) {
+        document.getElementById('login_error').innerHTML = 'Email mező kitöltése kötelező!';
+        return;
+    }
+    if (!password) {
+        document.getElementById('login_error').innerHTML = 'Jelszó mező kitöltése kötelező!';
+        return;
+    }
+    if (!email === login_obj.email) {
+        document.getElementById('login_error').innerHTML = 'Email nem jó!';
+        return;
+    }
+    if (!password === login_obj.password) {
+        document.getElementById('login_error').innerHTML = 'Jelszó nem jó!';
+        return;
+    }
+
+    SetCookie('logged_in', true);
+    document.getElementById('fiok').innerHTML = 'Üdv, '+login_obj.firstname;
+    document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
 }
 
 function ShowPassword() {
-    pass_element = document.getElementById('password');
+    pass_element = document.getElementById('password_input');
 
     if (pass_element.type === "password") {
         pass_element.type = "text";
@@ -145,77 +163,103 @@ function Favorite(element) {
 
 function SaveFavorites() {
     let cards_html = document.getElementsByClassName('card');
-    let cards = {};
+    let cards = null || [];
 
-    let favorites = GetCookie('favorites')
+    const favorites = GetCookie('favorites');
 
     for (let i = 0; i < cards_html.length; i++) {
         const element = cards_html[i];
         
         let icon = element.getElementsByTagName("i")[0];
+        let item_name = element.getElementsByTagName("h5")[0];
 
         if (icon.classList.contains('bi-heart')) { //un filled
-            cards[i] = {};
+            if (Array.isArray(favorites)) {
+                if (favorites.includes(item_name)) {
+                    console.log('delete');
+                    console.log(indexOf(item_name));
+                    cards[indexOf(item_name)] = null; //delete
+                }
+            }
         } else if (icon.classList.contains('bi-heart-fill')) { //filled
-            cards[i] = {};
-        }
-
-        favorites.forEach(element => {
-            console.log(element);
-        });
+            if (Array.isArray(favorites)) {
+                if (!favorites.includes(item_name)) {
+                    cards.push(item_name.innerHTML); //add
+                }
+            }
+        } 
     }
 
-    SetCookie('favorites', cards)
-
+    let resultToReturn = false;
+    let duplicates = [];
     for (let i = 0; i < cards.length; i++) {
         const element = cards[i];
         
         console.log(element);
+
+        for (let j = 0; j < cards.length; j++) {
+            // prevents the element from comparing with itself
+            if (i !== j) {
+                // check if elements' values are equal
+                if (cards[i] === cards[j]) {
+                    // duplicate element present
+                    cards[i] = null;
+                    duplicates.push(cards[i]);
+                    
+                    //resultToReturn = true;
+                    // terminate inner loop
+                    break;
+                }
+            }
+        }
+        // terminate outer loop
+        if (resultToReturn) {
+            break;
+        }
     }
+
+    for (let d = 0; d < duplicates.length; d++) {
+        const element = duplicates[d];
+        
+        cards.push(element);
+    }
+
+    SetCookie('favorites', cards)
 }
 
 function LoadFavorites() {
-    let cards = GetCookie('favorites');
+    const favorites = GetCookie('favorites');
+    if (!Array.isArray(favorites)) {return;}
 
     //console.log(cards);
 
-    for (const key in cards) {
-        console.log(key)
-        const element = cards[key];
+    let cards_html = document.getElementsByClassName('card');
 
-        //console.log(element);
-        
-        console.log(cards[key].favorited);
+    for (let i = 0; i < cards_html.length; i++) {
+        const element = cards_html[i];
 
-        if (cards[key].favorited == true) {
-            console.log(key);
+        let item_name = element.getElementsByTagName("h5")[0].innerHTML;
+        if (favorites.includes(item_name)) {
+            let item_span = element.getElementsByTagName("span")[0];
+            let item_i = element.getElementsByTagName("i")[0];
+
+            item_span.style = 'color: red';
+            item_i.classList.remove('bi-heart');
+            item_i.classList.add('bi-heart-fill');
         }
     }
-/*
-    for (let i = 0; i < cards.length; i++) {
-        console.log('aaa');
-        console.log(cards[i].favorited);
-
-        i_tag = document.getElementsByTagName('i')[i];
-
-        if (elementb) {
-            i_tag.style = 'color: red';
-            i_tag.classList.remove('bi-heart');
-            i_tag.classList.add('bi-heart-fill');
-        }
-    }
-    */
 }
 
 function CheckUser() {
     login_obj = GetCookie('login');
     logged_in = GetCookie('logged_in');
-    login_div = document.getElementById('login_reg').innerHTML;
-    if (logged_in) {
-        document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
-        if (login_div) {
-            document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
-        }
+    if (!login_obj || !logged_in) {return};
+
+    document.getElementById('fiok').innerHTML = 'Üdv, ' + login_obj.firstname;
+    
+    login_reg = document.getElementById('login_reg');
+    if (login_reg) {
+        document.getElementById('login_reg').innerHTML = '<hr class="top_hr"><h1 class="login_reg_sign">' + login_obj.lastname + ' ' + login_obj.firstname + '</h1><p class="reg">' + login_obj.email + '</p><button onclick="Logout()" >KIJELENTKEZÉS</button><hr class="down_hr">';
     }
 }
 
@@ -226,12 +270,72 @@ function Logout() {
 }
 
 function PutToCart() {
-    const cart = GetCookie('cart');
-    let item_name = document.getElementById('name');
+    let cart = GetCookie('cart') || [];
+    let item_name = document.getElementById('name').innerHTML;
     let sizes = document.getElementById('sizes');
     let item_size = sizes.options[sizes.selectedIndex].text;
+    let item_image = document.getElementsByTagName("img")[1].src;
+    let color_div = document.getElementById('color_style');
+    let item_color = color_div.getElementsByTagName("p")[0].innerHTML;
+    let title_div = document.getElementById('title');
+    let item_sex = title_div.getElementsByTagName("p")[0].innerHTML;
+    let price_div = document.getElementById('price');
+    let item_price = price_div.getElementsByTagName("h1")[0].innerHTML;
 
-    cart.push({name : item_name, size : item_size});
+    let inCartAlready = false;
+    for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
+        
+        if (item.name === item_name) {
+            inCartAlready = true;
+            cart[i].amount = cart[i].amount + 1
+        }
+    }
+
+    if (!inCartAlready) {
+        cart.push({
+            name : item_name,
+            size : item_size,
+            image : item_image,
+            color : item_color,
+            sex : item_sex,
+            price : item_price,
+            amount: 1
+        });
+    }
+
+    SetCookie('cart', cart);
+}
+
+function RemoveFromCart(element) {
+    event.preventDefault();
+
+    console.log(element);
+}
+
+function LoadCart() {
+    let cards_div = document.getElementById('cards');
+    if (!cards_div) {return;}
+    
+    let cards_div_string = '';
+    let cart = GetCookie('cart') || [];
+
+    if (!cart.length > 0) {
+        document.getElementById('cards').innerHTML = '<div id="first_card"><div id="content"><h1>Nincs Semmi a kosaradban!</h1></div></div>';
+        return;
+    }
+
+    for (let i = 0; i < cart.length; i++) {
+        let item_html = '';
+        const item = cart[i];
+        console.log(item);
+        item_html = '<div id="first_card"><hr class="top_hr"><div id="content"><div id="images"><img src="'+item.image+'" alt=""></div><div id="info"><div id="title_price"><h1>'+item.name+'</h1><div id="price"><p>'+item.price+' x '+item.amount+'</p></div></div><div id="left_side"><p>'+item.sex+'</p><p>'+item.color+'</p><a onclick="RemoveFromCart(this)" href=""><p class="delete">ELTÁVOLÍTÁS</p></a></div></div></div><hr class="bottom_hr">';
+        console.log(item_html);
+        let a = cards_div_string.concat(item_html);
+        cards_div_string = a;
+    }
+    document.getElementById('cards').innerHTML = cards_div_string;
+    console.log(cards_div_string);
 }
 
 window.onload = function() {
@@ -239,11 +343,15 @@ window.onload = function() {
 
     CheckUser();
     LoadFavorites();
+    LoadCart();
 };
 
+
+//Alex::
 //Navbar kezdete
 
 //Navbar scrolling kezdete
+/* SZAR .. ERROR GENERATOR
 
 myID = document.getElementById("navbar");
 var myScrollFunc = function() {
@@ -256,6 +364,7 @@ var myScrollFunc = function() {
 };
 window.addEventListener("scroll", myScrollFunc);
 
+*/
 //Navbar scrolling vége
 
 //Navbar hamburger ikon-ra való nyomáskor megjelenő menü kezdete
@@ -274,6 +383,7 @@ function myFunction() {
 //Navbar vége
 
 //Ugyan az csak a Bootstrap-es részre vonatkozóan kezdete
+/*  SZAR
 
 myID = document.getElementById("navbar_off");
 var myScrollFunc = function() {
@@ -286,7 +396,6 @@ var myScrollFunc = function() {
 };
 window.addEventListener("scroll", myScrollFunc);
 
-/*
 function myFunction() {
   var x = document.getElementById("nav_id_off");
   if (x.className === "navbar_off") {
@@ -298,3 +407,4 @@ function myFunction() {
 */
 
 //Ugyan az csak a Bootstrap-es részre vonatkozóan vége
+//who tf here.. understands this btw?

@@ -62,14 +62,15 @@ a, a:link, a:visited, a:active {
     border-radius: 5px;
 }
 
-#login_reg #inputs #password span a{
+#login_reg #inputs #password span{
     display: flex;
 }
 
-#login_reg #inputs #password a i {
-    margin-left: 62%;
-    margin-top: -1.7em;
+#login_reg #inputs #password span input{
+    margin-left: 65%;
+    margin-top: -2.0em;
     font-size: 1.7vw;
+    width: 5%;
 }
 
 ::-webkit-input-placeholder {

@@ -195,7 +195,7 @@ function SaveFavorites() {
     for (let i = 0; i < cards.length; i++) {
         const element = cards[i];
         
-        console.log(element);
+        //console.log(element);
 
         for (let j = 0; j < cards.length; j++) {
             // prevents the element from comparing with itself
@@ -316,7 +316,7 @@ function RemoveFromCart(element) {
 function LoadCart() {
     let cards_div = document.getElementById('cards');
     if (!cards_div) {return;}
-    
+
     let cards_div_string = '';
     let cart = GetCookie('cart') || [];
 
@@ -328,14 +328,14 @@ function LoadCart() {
     for (let i = 0; i < cart.length; i++) {
         let item_html = '';
         const item = cart[i];
-        console.log(item);
+        //console.log(item);
         item_html = '<div id="first_card"><hr class="top_hr"><div id="content"><div id="images"><img src="'+item.image+'" alt=""></div><div id="info"><div id="title_price"><h1>'+item.name+'</h1><div id="price"><p>'+item.price+' x '+item.amount+'</p></div></div><div id="left_side"><p>'+item.sex+'</p><p>'+item.color+'</p><a onclick="RemoveFromCart(this)" href=""><p class="delete">ELTÁVOLÍTÁS</p></a></div></div></div><hr class="bottom_hr">';
-        console.log(item_html);
+        //console.log(item_html);
         let a = cards_div_string.concat(item_html);
         cards_div_string = a;
     }
     document.getElementById('cards').innerHTML = cards_div_string;
-    console.log(cards_div_string);
+    //console.log(cards_div_string);
 }
 
 window.onload = function() {
